@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="loginSimple.css">
+    <style>
+        #image{
+    margin-top: 10px;
+    /* box-shadow: 5px 5px 5px 5px gray; */
+    width: 60px;;
+    padding: 20px;
+    font-weight: 400;
+    padding-bottom: 0px;
+    height: 30px;
+    user-select: none;
+    text-decoration:line-through;
+    font-style: italic;
+    font-size: x-large;
+    border:  #007bff 2px solid;
+    margin-left: 10px;
+    
+    }
+    #user-input{
+    /* box-shadow: 5px 5px 5px 5px gray; */
+    width:auto;
+    margin-right: 10px;
+    padding: 5px;
+    padding-bottom: 0px;
+    height: 40px;
+    border: red 0px solid;
+    }
+    input{
+    border:1px black solid;
+    }
+    .inline{
+    display:inline-block;
+    }
+    #btn{
+    box-shadow: 5px 5px 5px grey;
+    color: white ;
+    margin: 10px;
+    background-color:  #007bff  ;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="image">
+        <img align="left" src="Image/v7_23.png" alt="india map with Voting Machine">
+    </div>
+    <div class="container">
+        <div class="login-box">
+            <h2>Login</h2> 
+            <p>Do not have an account? <a href="signupSimple.html">Sign-up</a></p>
+            <form id="signupForm" action="login.php" method="post">
+                <b>Indian Resident Elector</b><br>
+
+                <label for="Epic"> Registered Mobile No./Email Id/EPIC No. <br>
+                    <input type="text" id="Epic" name="Epic" placeholder="Enter registered Mobile No./ Email ID/ EPIC NO" required>
+                </label><br>
+
+                <label for="Password">Password: <br>
+                    <input type="password" id="Password" name="Password" placeholder="Password" required/>
+                </label><br>
+                <a href="#">Forgot Password?</a><br>
+                <div alt="Captcha" >
+                    <label for="captcha">Captcha: </label><br>
+                    <!-- <input type="text" name="captcha" placeholder="Enter Captcha"> -->
+                    <body onload="generate()">
+                        <div  id="user-input" class="inline">
+                            <input type="text" 
+                                   id="submit" 
+                                   placeholder="Captcha code" />
+                        </div>
+                    
+                        <div class="inline" onclick="generate()">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                    
+                        <div id="image" 
+                             class="inline" 
+                             selectable="False">
+                        </div>
+                        <!-- <input type="submit" 
+                               id="btn" 
+                               onclick="printmsg()" /> -->
+                    
+                        <p id="key"></p>
+                </div>
+                <input type="submit"  id="btn" value="Login" >
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Perform form validation and any other logic here
+            // For demonstration, we'll just redirect to the dashboard page
+
+            window.location.href = 'dashboard.html'; // Redirect to the dashboard page
+        });
+    </script>
+
+<script>
+    //Captcha js
+        let captcha;
+function generate() {
+
+    // Clear old input
+    document.getElementById("submit").value = "";
+
+    // Access the element to store
+    // the generated captcha
+    captcha = document.getElementById("image");
+    let uniquechar = "";
+
+    const randomchar =
+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    // Generate captcha for length of
+    // 5 with random character
+    for (let i = 1; i < 5; i++) {
+        uniquechar += randomchar.charAt(
+            Math.random() * randomchar.length)
+    }
+
+    // Store generated input
+    captcha.innerHTML = uniquechar;
+}
+
+function printmsg() {
+    const usr_input = document
+        .getElementById("submit").value;
+
+    // Check whether the input is equal
+    // to generated captcha or not
+    if (usr_input == captcha.innerHTML) {
+        let s = document.getElementById("key")
+            .innerHTML = "Matched";
+        generate();
+    }
+    else {
+        let s = document.getElementById("key")
+            .innerHTML = "not Matched";
+        generate();
+    }
+}
+    </script>
+</body>
+</html>

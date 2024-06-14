@@ -1,0 +1,97 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 320px;
+    height: 600px;
+    border: 2px solid black;
+    margin: 0;
+}
+
+.login-box {
+    width: 300px;
+    text-align: left;
+}
+
+.login-box h2 {
+    margin-top: 0;
+}
+
+.login-box p {
+    margin: 10px 0;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"],
+.login-box input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-box input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.login-box input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.login-box a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
+
+.forgot-password {
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.captcha-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.captcha-container img {
+    width: 100px;
+    height: 40px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.g-recaptcha {
+    margin: 10px 0;
+}
+

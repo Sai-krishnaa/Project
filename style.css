@@ -1,0 +1,129 @@
+:root {
+    --bs-dark-color: #1a1d20;
+    --bs-dark-primary: #1c1c1c;
+    --bs-main-color: #fff;
+    --bs-primary-color: #c6c6c6;
+    --secondary-color: #29a9fd;
+    --bs-supporting-color: #C850c0;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Lexend Deca', sans-serif;
+    color: var(--bs-main-color);
+}
+
+h1 {
+    font-size: 3.9rem;
+}
+
+h2 {
+    line-height: 2rem;
+    font-weight: 600;
+    font-size: 3.4rem;
+}
+
+p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--bs-main-color);
+    letter-spacing: 0.09rem;
+    line-height: 1.50rem;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 10px;
+    margin-top:10px;
+    margin-left: 10px;
+}
+
+.navbar-brand {
+    font-weight: 900;
+    margin-top: 20px;
+    margin-right: 20px;
+    color: var(--bs-dark-color);
+}
+
+.nav-link {
+    color: var(--bs-dark-color);
+    font-weight: bolder;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+
+.btn {
+    width: 134px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 20px;
+    border: 2px solid var(--bs-main-color);
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Hero section css  */
+
+.hero-section .container {
+    display: grid;
+    place-content: center;
+    height: inherit;
+}
+
+.bg-main {
+    height: 80vh;
+    position: relative;
+}
+
+.bg-color {
+    background-image: url(Image/v7_55.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+h3 {
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.slide-track {
+    width: 100%;
+    display: flex;
+    gap: 5em;
+    overflow: hidden;
+}
+
+.slider {
+    margin-top: 10px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.268);
+    padding: 1.25em 1em;
+    animation: scroll 30s linear infinite;
+}
